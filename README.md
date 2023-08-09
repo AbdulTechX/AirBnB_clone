@@ -45,7 +45,7 @@ All the development and testing was runned over an operating system Ubuntu 22.04
 ## 0x03 Installation
 
 ```bash
-git clone https://github.com/Muideen7/AirBnB_clone.git
+git clone https://github.com/Deejaht/AirBnB_clone.git
 ```
 
 change to the `AirBnb` directory and run the command:
