@@ -1,5 +1,6 @@
 # 0x00. AirBnB Clone ― The ALX-Holberton BnB(The Console)
 
+![airnnb](https://github.com/Deejaht/AirBnB_clone/assets/125444167/3e8820d9-24c5-4e14-9b4b-9a4002f041e1)
 
 
 
