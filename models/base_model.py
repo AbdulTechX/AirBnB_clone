@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # base_model.py
 # AbdulTechX
+
 import uuid
 from datetime import datetime
 from models import storage
@@ -25,15 +26,15 @@ class BaseModel:
             second_name: buhari)
 
         """
-        timeformat = "%Y-%m-%dT%H:%M:%S.%f"
+
         if kwargs is not None and kwargs != {}:
             for keyword in kwargs:
                 if keyword == "created_at":
                     self.__dict__["created_at"] = datetime.strptime(
-                        kwargs["created_at"], timeformat)
+                        kwargs["created_at"], "%Y-%m-%dT%H:%M:%S.%f")
                 elif keyword == "updated_at":
                     self.__dict__["update_at"] = datetime.strptime(
-                        kwargs["created_at"], timeformat)
+                        kwargs["created_at"], "%Y-%m-%dT%H:%M:%S.%f")
                 else:
                     self.__dict__[keyword] = kwargs[keyword]
         else:
@@ -41,6 +42,11 @@ class BaseModel:
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
             storage.new(self)
+
+    def __str__(self):
+        """return the string representation format"""
+        return "[{}] ({}) {}".\
+            format(type(self).__name__, self.id, self.__dict__)
 
     def save(self):
         """updates the public instance attribute with the current datetime"""
@@ -55,8 +61,3 @@ class BaseModel:
         k_dict["created_at"] = k_dict["created_at"].isoformat()
         k_dict["updated_at"] = k_dict["updated_at"].isoformat()
         return k_dict
-
-    def __str__(self):
-        """return the string representation format"""
-        return "[{}] ({}) {}".\
-            format(type(self).__name__, self.id, self.__dict__)
