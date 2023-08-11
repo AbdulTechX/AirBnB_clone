@@ -60,4 +60,5 @@ class BaseModel:
         k_dict["__class__"] = type(self).__name__
         k_dict["created_at"] = k_dict["created_at"].isoformat()
         k_dict["updated_at"] = k_dict["updated_at"].isoformat()
+
         return k_dict
