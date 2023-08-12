@@ -48,17 +48,17 @@ class HBNBCommand(cmd.Cmd):
         self.onecmd(command)
         return command
 
-    
     def emptyline(self):
         """do nothing upon recieving an empty line"""
         pass
-    
+
     def do_EOF(self, args):
         """handle End of file"""
         print()
-        return True       
+        return True
+
     def do_quit(self, args):
-        """quit the command to exit the program"""
+        """quit the command to exit the.. program"""
         return True
 
     def do_create(self, args):
@@ -118,8 +118,9 @@ class HBNBCommand(cmd.Cmd):
             if string[0] not in storage.classes():
                 print("** class doesn't exist **")
             else:
-                n_args = [str(obj) for key, obj in storage.all().items()
-                      if type(obj).__name__ == string[0]]
+                n_args = [str(obj) for key,
+                          obj in storage.all().items()
+                          if type(obj).__name__ == string[0]]
                 print(n_args)
         else:
             new_list = [str(obj) for key, obj in storage.all().items()]
@@ -185,6 +186,7 @@ class HBNBCommand(cmd.Cmd):
                         pass  # fine, stay a string then
                 setattr(storage.all()[key], attribute, value)
                 storage.all()[key].save()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

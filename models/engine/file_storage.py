@@ -28,9 +28,10 @@ class FileStorage:
     def save(self):
         """ serializes __objects to the JSON file (path: __file_path)"""
         with open(FileStorage.__file_path, "w", encoding="utf-8") as f:
-            obj_dict = {j: i.to_dict() for j, i in FileStorage.__objects.items()}
+            obj_dict = {j: i.to_dict()
+                        for j, i in FileStorage.__objects.items()}
             json.dump(obj_dict, f)
-            
+
     def classes(self):
         """Returns a dictionary of valid classes and their references"""
         from models.base_model import BaseModel
@@ -40,7 +41,7 @@ class FileStorage:
         from models.amenity import Amenity
         from models.place import Place
         from models.review import Review
-        
+
         classes = {"BaseModel": BaseModel,
                    "User": User,
                    "State": State,
@@ -57,7 +58,7 @@ class FileStorage:
         with open(FileStorage.__file_path, "r", encoding="utf-8") as f:
             file_dict = json.load(f)
             file_dict = {j: self.classes()[i["__class__"]](**i)
-                        for j, i in file_dict.items()}
+                         for j, i in file_dict.items()}
             FileStorage.__objects = file_dict
 
     def attributes(self):
@@ -68,7 +69,7 @@ class FileStorage:
                       "created_at": datetime.datetime,
                       "updated_at": datetime.datetime},
             "User":
-                     {"email":str,
+                     {"email": str,
                       "password": str,
                       "first_name": str,
                       "last_name": str},
@@ -92,8 +93,8 @@ class FileStorage:
                       "longitude": float,
                       "amenity_ids": list},
             "Review":
-                     {"place_id": str,
-                      "user_id": str,
-                      "text": str}
+            {"place_id": str,
+                         "user_id": str,
+                         "text": str}
         }
         return attributes
