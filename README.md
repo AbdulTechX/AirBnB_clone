@@ -11,7 +11,6 @@
 * [0x03 Installation](#0x03-Installation)
 * [0x04 Testing](#0x04-Testing)
 * [0x05 Usage](#0x05-Usage)
-* [0x06 Authors](#0x06-Authors)
 
 ## 0x01 Introduction
 
@@ -263,5 +262,7 @@ e952b772-80a5-41e9-b728-6bc4dc5c21b4
 (hbnb) show User 1afa163d-486e-467a-8d38-3040afeaa1a1
 [User] (s) [User] (1afa163d-486e-467a-8d38-3040afeaa1a1) {'id': '1afa163d-486e-467a-8d38-3040afeaa1a1', 'created_at': datetime.datetime(2021, 11, 14, 23, 42, 10, 502157), 'updated_at': datetime.datetime(2021, 11, 14, 23, 42, 10, 502186), 'email': 'aysuarex@gmail.com'}
 (hbnb)
-
 ```
+
+
+
