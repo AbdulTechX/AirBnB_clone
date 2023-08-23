@@ -24,7 +24,8 @@
 .locations{
   border-right: 1px solid #DDDDDD;
 }
-.locations, .amenities{
+.place .locations, 
+.place .amenities{
   height: 100%;
   width: 25%;
   float: left;
